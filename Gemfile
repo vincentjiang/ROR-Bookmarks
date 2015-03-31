@@ -5,6 +5,8 @@ ruby '2.1.3'
 gem 'rails', '4.1.6'
 gem 'mysql2'
 
+gem 'rails_admin'
+
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'jbuilder'
@@ -24,9 +26,13 @@ gem 'angularjs-rails'
 gem 'chinese_pinyin'
 
 # 验证
-gem 'clearance', '~> 1.7.0'
+# gem 'clearance', '~> 1.7.0'
 # gem 'rolify'#, git: 'git@github.com:EppO/rolify.git'
 # gem 'authority'#, git: 'git@github.com:nathanl/authority.git'
+
+# Use Devise to manage user sessions
+gem 'devise'
+gem 'devise-bootstrap-views'
 
 # 表单
 gem 'simple_form'
