@@ -309,7 +309,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (2.7.1)
       execjs (>= 0.3.0)
-      json (>= 1.8.0)
+      json (>= 1.8.2)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
@@ -369,6 +369,7 @@ DEPENDENCIES
   jeditable-rails
   jquery-colorbox-rails
   jquery-rails
+  json
   kaminari
   mail
   mini_magick
