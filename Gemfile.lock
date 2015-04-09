@@ -369,7 +369,6 @@ DEPENDENCIES
   jeditable-rails
   jquery-colorbox-rails
   jquery-rails
-  json
   kaminari
   mail
   mini_magick

@@ -12,7 +12,7 @@ gem 'uglifier'
 gem 'jbuilder'
 gem 'bcrypt-ruby'
 gem 'turbolinks'
-gem 'json'
+# gem 'json'
 
 # Bootstrap
 gem 'sass-rails'
