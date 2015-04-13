@@ -58,7 +58,7 @@ namespace :deploy do
   end
 
   after :restart, :'puma:restart'
-  after :restart, :'deploy:update_crontab'
+  # after :restart, :'deploy:update_crontab'
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
