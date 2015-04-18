@@ -19,5 +19,17 @@ module BookMark
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.active_record.default_timezone = :local  
+    config.time_zone = 'Beijing'
+
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :"zh-CN"
+
+    config.paths.add "api/apis", eager_load: true
+    config.paths.add "api/entities", eager_load: true
+    # config.paths.add "api/formatters", eager_load: true
+    config.paths.add "api/helpers", eager_load: true
+    # config.autoload_paths += Dir[Rails.root.join('api', '*')]
   end
 end

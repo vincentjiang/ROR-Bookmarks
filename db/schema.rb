@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331065139) do
+ActiveRecord::Schema.define(version: 20150418110751) do
+
+  create_table "bookmarks", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "url"
+    t.string   "avatar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "managers", force: true do |t|
     t.string   "name",                   default: "", null: false
@@ -31,5 +48,30 @@ ActiveRecord::Schema.define(version: 20150331065139) do
 
   add_index "managers", ["email"], name: "index_managers_on_email", unique: true, using: :btree
   add_index "managers", ["reset_password_token"], name: "index_managers_on_reset_password_token", unique: true, using: :btree
+
+  create_table "user_questions", force: true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_settings", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "auto_backup"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "avatar"
+    t.integer  "sex"
+    t.date     "birthday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
