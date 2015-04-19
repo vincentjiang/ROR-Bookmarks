@@ -1,4 +1,4 @@
-class BookMarkAPI < Grape::API
+class BookmarkAPI < Grape::API
   format :json
 
   rescue_from :all, :backtrace => true
@@ -9,6 +9,11 @@ class BookMarkAPI < Grape::API
 
   mount UsersAPI
   mount SessionsAPI
+
+  namespace :bookmarks do
+    mount Bookmarks::BookmarksAPI
+    mount Bookmarks::CategoriesAPI
+  end
   # mount AccountsAPI
   # mount RelatedResourcesAPI
   # mount SearchAPI

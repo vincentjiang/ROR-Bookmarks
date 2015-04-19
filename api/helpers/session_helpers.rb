@@ -1,7 +1,7 @@
 module SessionHelpers
 
 	def current_user
-  	@user = user.where(id: session[:user_id]).first 
+  	@user = User.where(id: session[:user_id]).first 
   end
 
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :managers
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  mount BookMarkAPI => '/api'
+  mount BookmarkAPI => '/api'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

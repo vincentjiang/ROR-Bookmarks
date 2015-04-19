@@ -14,8 +14,16 @@ class UsersAPI < Grape::API
       requires :password, type: String, desc: "password"
     end
 		post :create  do
-			user = User.create(user_params)
-			present user, with: UserEntity
+			user_check_name = User.where(username: params[:username])
+			user_check_email = User.where(email: params[:email])
+			if user_check_name.blank? && user_check_email
+				user = User.create(user_params)
+				present user, with: UserEntity
+			else
+				msg = "邮箱已被注册" if user_check_email.present?
+				msg = "用户名已被注册" if user_check_name.present?
+				present :msg, msg
+			end
 		end
 	end
 end

@@ -15,4 +15,10 @@ class SessionsAPI < Grape::API
 		end
 		present :msg, msg
 	end
+
+
+	delete :logout do
+		session[:user_id] = nil
+		present :msg, "退出成功"
+	end
 end
