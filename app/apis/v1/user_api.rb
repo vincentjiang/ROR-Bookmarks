@@ -38,9 +38,6 @@ class V1::UserApi < Grape::API
 
   resource :user do
     desc '查询用户资料'
-    params do
-      requires :token, type: String, desc: "用户的token"
-    end
     get 'info' do
       authenticate_user!
       present current_user, with: V1::Entities::User
@@ -48,7 +45,6 @@ class V1::UserApi < Grape::API
 
     desc '更新用户资料'
     params do
-      #requires :token, type: String, desc: "用户的token"
       requires :sexy, type: Integer, values: [0, 1], desc: "0代表男，1表示女"
       requires :birthday, type: Date, desc: "用户的生日日期"
     end

@@ -239,7 +239,7 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   figaro
-  grape
+  grape (= 0.11.0)
   grape-entity
   grape-swagger
   jbuilder (~> 2.0)
