@@ -1,106 +1,41 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.2.0'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.1'
 gem 'mysql2'
-
-gem 'rails_admin'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'slim-rails'
 
 gem 'jquery-rails'
-gem 'uglifier'
-gem 'jbuilder'
-gem 'bcrypt-ruby'
 gem 'turbolinks'
-gem 'json'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Bootstrap
-gem 'sass-rails'
-gem 'bootstrap-sass'
-
-gem 'jquery-colorbox-rails'
-# AngularJs
-gem 'angularjs-rails'
-
-# 拼音
-gem 'chinese_pinyin'
-
-# 验证
-# gem 'clearance', '~> 1.7.0'
-# gem 'rolify'#, git: 'git@github.com:EppO/rolify.git'
-# gem 'authority'#, git: 'git@github.com:nathanl/authority.git'
-
-# Use Devise to manage user sessions
-gem 'devise'
-gem 'devise-bootstrap-views'
-
-# 表单
-gem 'simple_form'
-# 分页
-gem 'kaminari'
-
-# 图片
-gem 'mini_magick'
-gem 'carrierwave'
-
-# 微信
-gem 'weixin_rails_middleware'
-gem "weixin_authorize"
-
-# 短信
-gem "china_sms"
-
-# YAML
-gem 'settingslogic'
-
-# Ali OSS
-gem 'rest-client'
-gem 'carrierwave-aliyun'
-
-# Redis
-gem 'hiredis'
-gem 'redis-namespace'
-gem 'redis-objects'
-gem 'sidekiq'
-
-gem 'dalli'
-
-# 定时任务
-gem 'whenever', :require => false
-
-# Email
-gem 'mail'
-
-# API
+gem 'bcrypt', '~> 3.1.7'
 gem 'grape'
 gem 'grape-entity'
-
-# Excel
-gem 'ekuseru'
-
-# HTTP
-gem 'faraday'
-
+gem 'grape-swagger'
+gem 'jwt'
+gem "figaro"
+gem 'pundit'
 gem 'puma'
 
-gem 'jeditable-rails'
+# Use Unicorn as the app server
+# gem 'unicorn'
 
-#备注
-gem 'annotate'
-
-#监控
-gem 'newrelic_rpm'
-gem 'hipchat'
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'thin', '1.6.3'
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+  gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'pry-rescue'
   gem 'factory_girl_rails'
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
-  gem 'capistrano-bundler'
-  gem 'capistrano-sidekiq'
-  gem 'grape-rails-routes'
-  gem 'capistrano3-puma'
+  gem 'database_cleaner'
 end
