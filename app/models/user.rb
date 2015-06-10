@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   PASSWORD_REGEX = /\A(?=.*[A-Z])(?=.*\d)(?!.*(.)\1\1)[a-zA-Z0-9@]{6,12}\z/
 
   validates :email, :username, uniqueness: true
-  validates :email, format: { with: EMAIL_REGEX, on: :create } # 邮箱创建时需要验证，创建后不能修改
-  validates :username, format: { with: USERNAME_REGEX, on: :create }
-  validates :password, format: { with: PASSWORD_REGEX, on: :create }
+  #validates :email, format: { with: EMAIL_REGEX } # 邮箱创建时需要验证，创建后不能修改
+  #validates :username, format: { with: USERNAME_REGEX }
+  #validates :password, format: { with: PASSWORD_REGEX }
 
   before_create :generate_activate_code
 
@@ -25,9 +25,18 @@ class User < ActiveRecord::Base
     activate_code.present? && activated_at.present?
   end
 
-  # 生成32位随机字符串的激活码
   def generate_activate_code
-    self.activate_code = ([*('a'..'z'),*('A'..'Z'),*('0'..'9')]-%w(0 1 I O L i o l)).sample(32).join
+    generate_random_code(32)
   end
+
+  def generate_reset_password_token
+    generate_random_code(32)
+  end
+
+  private
+    # 生成n位随机字符串的激活码
+    def generate_random_code(n)
+      ([*('a'..'z'),*('A'..'Z'),*('0'..'9')]-%w(0 1 I O L i o l)).sample(n).join
+    end
 
 end

@@ -92,6 +92,8 @@ GEM
       grape (>= 0.8.0)
       grape-entity
     hashie (3.4.2)
+    hashie-forbidden_attributes (0.1.1)
+      hashie (>= 3.0)
     i18n (0.7.0)
     ice_nine (0.11.1)
     interception (0.5)
@@ -242,6 +244,7 @@ DEPENDENCIES
   grape (= 0.11.0)
   grape-entity
   grape-swagger
+  hashie-forbidden_attributes
   jbuilder (~> 2.0)
   jquery-rails
   jwt

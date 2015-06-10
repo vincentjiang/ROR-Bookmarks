@@ -18,6 +18,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'grape', '0.11.0'
 gem 'grape-entity'
 gem 'grape-swagger'
+gem "hashie-forbidden_attributes" # disables the security feature of strong_params at the model layer, allowing you the use of Grape's own params validation instead
 gem 'jwt'
 gem "figaro"
 gem 'pundit'
