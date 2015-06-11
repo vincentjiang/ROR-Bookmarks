@@ -22,13 +22,12 @@ gem "hashie-forbidden_attributes" # disables the security feature of strong_para
 gem 'jwt'
 gem "figaro"
 gem 'pundit'
-gem 'puma'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano'
+gem 'capistrano-rails', group: :development
+gem 'capistrano3-puma'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
