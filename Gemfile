@@ -23,10 +23,7 @@ gem 'jwt'
 gem "figaro"
 gem 'pundit'
 
-# Use Capistrano for deployment
-gem 'capistrano'
-gem 'capistrano-rails', group: :development
-gem 'capistrano3-puma'
+# Use mina for deployment
 gem 'puma'
 
 group :development, :test do

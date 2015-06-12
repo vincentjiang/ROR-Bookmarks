@@ -1,4 +1,12 @@
-threads 8,32
-workers 3
-preload_app!
-port ENV['PORT'] || 3000
+workers 2
+
+environment ENV['RAILS_ENV'] || 'production'
+ 
+daemonize true
+ 
+pidfile "/var/www/owl42.com/shared/tmp/pids/puma.pid"
+stdout_redirect "/var/www/owl42.com/shared/tmp/log/stdout", "/var/www/owl42.com/shared/tmp/log/stderr"
+ 
+threads 4, 16
+ 
+bind "unix:///var/www/owl42.com/shared/tmp/sockets/puma.sock"
