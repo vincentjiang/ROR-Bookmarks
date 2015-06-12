@@ -13,7 +13,8 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain, 'owl42.com'
 set :user, "deployer"
 set :deploy_to, '/var/www/owl42.com'
-set :repository, 'git@git.oschina.net:65384403/ROR-Bookmarks.git'
+set :app_path, lambda { "#{deploy_to}/#{current_path}" }
+set :repository, 'git@github.com:vincentjiang/ROR-Bookmarks.git'
 set :branch, 'master'
 set :term_mode, :system
 set :stage, 'production'
@@ -89,19 +90,19 @@ namespace :puma do
   desc "Start the application"
   task :start do
     queue 'echo "-----> Start Puma"'
-    queue "cd #{current_path} && RAILS_ENV=#{stage} && bin/puma.sh start", :pty => false
+    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh start", :pty => false
   end
 
   desc "Stop the application"
   task :stop do
     queue 'echo "-----> Stop Puma"'
-    queue "cd #{current_path} && RAILS_ENV=#{stage} && bin/puma.sh stop"
+    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh stop"
   end
 
   desc "Restart the application"
   task :restart do
     queue 'echo "-----> Restart Puma"'
-    queue "cd #{current_path} && RAILS_ENV=#{stage} && bin/puma.sh restart"
+    queue "cd #{app_path} && RAILS_ENV=#{stage} && bin/puma.sh restart"
   end
 end
 
