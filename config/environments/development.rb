@@ -47,7 +47,7 @@ Rails.application.configure do
     domain: 'vrails.com',
     authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV["email_username"],
-    password: ENV["email_password"]
+    user_name: ENV["EMAIL_USERNAME"],
+    password: ENV["EMAIL_PASSWORD"]
   }
 end

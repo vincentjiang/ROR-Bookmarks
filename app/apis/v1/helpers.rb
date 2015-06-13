@@ -3,7 +3,7 @@ module V1
     def authenticate_user!
       begin
         token = request.headers["Authorization"]
-        payload, _ = JWT.decode(token, ENV['token_key'])
+        payload, _ = JWT.decode(token, ENV['TOKEN_KEY'])
         @current_user = User.where(id: payload["user_id"]).first
       rescue Exception => e
         puts e if Rails.env.development?

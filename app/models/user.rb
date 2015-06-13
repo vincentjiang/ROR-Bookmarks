@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   before_create :generate_activate_code
 
   def generate_token
-    JWT.encode({ user_id: id }, ENV["token_key"])
+    JWT.encode({ user_id: id }, ENV["TOKEN_KEY"])
   end
 
   def reset_token!
