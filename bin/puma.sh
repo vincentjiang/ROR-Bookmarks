@@ -65,6 +65,6 @@ case "$1" in
     ;;
  
   *)
-    echo "Usage: script/puma.sh {start|stop|restart}" >&2
+    echo "Usage: bin/puma.sh {start|stop|restart}" >&2
     ;;
 esac
