@@ -5,7 +5,7 @@ environment ENV['RAILS_ENV'] || 'production'
 daemonize true
  
 pidfile "/var/www/owl42.com/shared/tmp/pids/puma.pid"
-stdout_redirect "/var/www/owl42.com/shared/tmp/log/stdout", "/var/www/owl42.com/shared/tmp/log/stderr"
+stdout_redirect "/var/www/owl42.com/shared/log/stdout", "/var/www/owl42.com/shared/log/stderr"
  
 threads 4, 16
  

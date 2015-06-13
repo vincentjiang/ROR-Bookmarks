@@ -1,9 +1,9 @@
 #! /bin/sh
- 
+
 PUMA_CONFIG_FILE=/var/www/owl42.com/config/puma.rb
 PUMA_PID_FILE=/var/www/owl42.com/shared/tmp/pids/puma.pid
 PUMA_SOCKET=/var/www/owl42.com/shared/tmp/sockets/puma.sock
- 
+
 # check if puma process is running
 puma_is_running() {
   if [ -S $PUMA_SOCKET ] ; then
@@ -19,10 +19,10 @@ puma_is_running() {
   else
     echo "No puma socket found"
   fi
- 
+
   return 1
 }
- 
+
 case "$1" in
   start)
     echo "Starting puma..."
@@ -32,24 +32,24 @@ case "$1" in
       else
         bundle exec puma
       fi
- 
+
     echo "done"
     ;;
- 
+
   stop)
     echo "Stopping puma..."
       kill -s SIGTERM `cat $PUMA_PID_FILE`
       rm -f $PUMA_PID_FILE
       rm -f $PUMA_SOCKET
- 
+
     echo "done"
     ;;
- 
+
   restart)
     if puma_is_running ; then
       echo "Hot-restarting puma..."
       kill -s SIGUSR2 `cat $PUMA_PID_FILE`
- 
+
       echo "Doublechecking the process restart..."
       sleep 5
       if puma_is_running ; then
@@ -59,11 +59,11 @@ case "$1" in
         echo "Puma restart failed :/"
       fi
     fi
- 
+
     echo "Trying cold reboot"
     bin/puma.sh start
     ;;
- 
+
   *)
     echo "Usage: bin/puma.sh {start|stop|restart}" >&2
     ;;
