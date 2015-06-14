@@ -1,8 +1,8 @@
 #! /bin/sh
 
-PUMA_CONFIG_FILE=/var/www/owl42.com/config/puma.rb
-PUMA_PID_FILE=/var/www/owl42.com/shared/tmp/pids/puma.pid
-PUMA_SOCKET=/var/www/owl42.com/shared/tmp/sockets/puma.sock
+PUMA_CONFIG_FILE=/home/deployer/owl42.com/config/puma.rb
+PUMA_PID_FILE=/home/deployer/owl42.com/shared/tmp/pids/puma.pid
+PUMA_SOCKET=/home/deployer/owl42.com/shared/tmp/sockets/puma.sock
 
 # check if puma process is running
 puma_is_running() {

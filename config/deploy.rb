@@ -12,7 +12,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 set :domain, 'owl42.com'
 set :user, "deployer"
-set :deploy_to, '/var/www/owl42.com'
+set :deploy_to, '/home/deployer/owl42.com'
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 set :repository, 'git@github.com:vincentjiang/ROR-Bookmarks.git'
 set :branch, 'master'
